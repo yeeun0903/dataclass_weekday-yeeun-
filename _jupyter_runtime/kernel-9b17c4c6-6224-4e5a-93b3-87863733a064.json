@@ -1,0 +1,13 @@
+{
+  "shell_port": 10467,
+  "iopub_port": 10468,
+  "stdin_port": 10469,
+  "control_port": 10471,
+  "hb_port": 10470,
+  "ip": "127.0.0.1",
+  "key": "1bf68630-df441876a7f0044d338de901",
+  "transport": "tcp",
+  "signature_scheme": "hmac-sha256",
+  "kernel_name": "python3",
+  "jupyter_session": "C:\\Users\\\uae40\uc608\uc740\\dataclass_weekday\\dataclass_weekday-yeeun-\\260129\\crawling-test260129.ipynb"
+}
