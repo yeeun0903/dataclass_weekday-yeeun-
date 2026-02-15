@@ -19,48 +19,16 @@ ADDONS = {}
 #USER_AGENT = "aladin (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Concurrency and throttling settings
 #CONCURRENT_REQUESTS = 16
 CONCURRENT_REQUESTS_PER_DOMAIN = 1
 DOWNLOAD_DELAY = 1
 
-# Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
-
-# Disable Telnet Console (enabled by default)
-#TELNETCONSOLE_ENABLED = False
-
-# Override the default request headers:
-#DEFAULT_REQUEST_HEADERS = {
-#    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-#    "Accept-Language": "en",
-#}
-
-# Enable or disable spider middlewares
-# See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    "aladin.middlewares.AladinSpiderMiddleware": 543,
-#}
-
-# Enable or disable downloader middlewares
-# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    "aladin.middlewares.AladinDownloaderMiddleware": 543,
-#}
-
-# Enable or disable extensions
-# See https://docs.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    "scrapy.extensions.telnet.TelnetConsole": None,
-#}
-
-# Configure item pipelines
-# See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "aladin.pipelines.AladinPipeline": 300,
-#}
+ITEM_PIPELINES = {
+    "aladin.pipelines.AladinPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -84,4 +52,12 @@ DOWNLOAD_DELAY = 1
 #HTTPCACHE_STORAGE = "scrapy.extensions.httpcache.FilesystemCacheStorage"
 
 # Set settings whose default value is deprecated to a future-proof value
-FEED_EXPORT_ENCODING = "utf-8"
+FEEDS = {
+    "result.csv" : {
+        "format": "csv",
+        "encoding": "utf-8-sig",
+        "fields": ["rank","title","author","publisher","price","point","url"],
+        "overwrite": True
+    }
+}
+

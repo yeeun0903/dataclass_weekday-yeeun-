@@ -1,7 +1,5 @@
 import scrapy
 
-
-
 class AladinItem(scrapy.Item):
     rank = scrapy.Field()
     title = scrapy.Field()
